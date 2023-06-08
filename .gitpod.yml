@@ -1,6 +1,9 @@
 image:
   file: gitpod.Dockerfile
 tasks:
+  - name: playwright
+    command: |
+      pip install playwright && playwright install-deps && playwright install
   - name: tailscaled
     command: |
       if [ -n "${TS_STATE_TAILSCALE_EXAMPLE}" ]; then
