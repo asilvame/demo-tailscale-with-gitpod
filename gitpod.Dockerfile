@@ -1,7 +1,7 @@
 FROM gitpod/workspace-full
 
 USER root
-
+RUN pip install playwright && playwright install-deps && playwright install 
 RUN curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.gpg | sudo apt-key add - \
      && curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.list | sudo tee /etc/apt/sources.list.d/tailscale.list \
      && apt-get update \
